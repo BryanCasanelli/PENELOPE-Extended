@@ -17,5 +17,5 @@ dependencies {
 }
 
 application {
-    mainClass = 'PENELOPE.GUI.App'
+    mainClass = 'penelope.extended.App'
 }
