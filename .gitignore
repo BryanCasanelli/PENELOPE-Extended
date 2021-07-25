@@ -4,3 +4,7 @@ app/build
 
 # .class files
 app/bin
+
+# Others
+.project
+.settings
