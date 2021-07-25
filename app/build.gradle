@@ -12,6 +12,10 @@ javafx {
     modules = ['javafx.controls', 'javafx.graphics']
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 dependencies {
     testImplementation 'junit:junit:4.13.2'
     implementation 'org.jfxtras:jmetro:11.6.14'
