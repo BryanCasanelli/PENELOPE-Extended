@@ -8,3 +8,5 @@ app/bin
 # Others
 .project
 .settings
+app/.project
+app/.classpath
