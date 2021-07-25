@@ -1,4 +1,4 @@
-package PENELOPE.GUI;
+package penelope.extended;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
