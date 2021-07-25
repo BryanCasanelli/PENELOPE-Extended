@@ -2,9 +2,6 @@ package penelope.extended;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.Separator;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
@@ -40,28 +37,13 @@ public class App extends Application{
         jMetro.setScene(scene);
         layout.getStyleClass().add(JMetroStyleClass.BACKGROUND);
         // Menu bar
-        layout.getChildren().add(menuBar());
+        TopPanel menuBar = new TopPanel();
+        layout.getChildren().add(menuBar.generate());
         // Separator
         layout.getChildren().add(new Separator());
         // Show
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setMaximized(true);
-    }
-
-    /**
-     * Constructs the menu bar
-     */
-    public MenuBar menuBar(){
-        MenuBar output = new MenuBar();
-        Menu menu = new Menu("Menu 1");
-        MenuItem menuItem1 = new MenuItem("Item 1");
-        MenuItem menuItem2 = new MenuItem("Item 2");
-
-        menu.getItems().add(menuItem1);
-        menu.getItems().add(menuItem2);
-
-        output.getMenus().add(menu);
-        return output;
     }
 }
