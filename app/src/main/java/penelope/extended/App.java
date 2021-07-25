@@ -1,5 +1,7 @@
 package penelope.extended;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Separator;
@@ -15,7 +17,10 @@ import jfxtras.styles.jmetro.Style;
  */
 public class App extends Application{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        // Initialize the language class
+        Language.init();
+        // Start the application
         launch(args);
     }
 
