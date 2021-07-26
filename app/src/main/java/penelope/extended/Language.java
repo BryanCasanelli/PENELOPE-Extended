@@ -52,9 +52,10 @@ public class Language {
             dict.put(0, "Idioma");
         }
         // Fill available languages map
-        available.put("en", dict.get(-1));
-        available.put("es", dict.get(-2));
-        available.put("same_as_the_system", dict.get(-3));
+        available.put("same_as_the_system", dict.get(-1));
+        available.put("en", dict.get(-2));
+        available.put("es", dict.get(-3));
+        
     }
 
     /**
