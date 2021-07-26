@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.prefs.Preferences;
 
 /**
  * Provides multi-language support.
@@ -13,30 +14,33 @@ public class Language {
     // Available languages
     public static Map<String, String> available = new HashMap<String, String>();
 
-    // English by default
-    private static String lang = "en";
+    // Same as the system by default
+    private static String lang = "same_as_the_system";
 
     // Dictionary
     private static Map<Integer, String> dict = new HashMap<Integer, String>();
+
+    // User preferences
+    private static Preferences preferences = Preferences.userRoot();
     
     /**
-     * <p> Reads the language config file in search of the configured language.
-     * <p> This file is located under the resources folder and is named "language".
+     * <p> Initialize the language related things.
      * <p> Currently the following values are supported: same_as_the_system, en, es.
      * @throws IOException
      */
     public static void init() throws IOException{
-        // Reads the file
-        String configFileContent = new String(App.class.getClassLoader().getResourceAsStream("language").readAllBytes());
+        // Reads the language preference
+        lang = preferences.get("penelope_extended_language", lang);
         // Same as the system?
-        if (configFileContent.equals("same_as_the_system")){
-            configFileContent = Locale.getDefault().getLanguage();
-        }
-        // Support only permitted configurations
-        boolean c1 = configFileContent.equals("en");
-        boolean c2 = configFileContent.equals("es");
-        if (c1 || c2){
-            lang = configFileContent;
+        if (lang.equals("same_as_the_system")){
+            lang = Locale.getDefault().getLanguage();
+            // Only supported languages
+            boolean c1 = lang.equals("en");
+            boolean c2 = lang.equals("es");
+            // If it is not supported, then select english
+            if (!c1 && !c2){
+                lang = "en";
+            }
         }
         // Fill dictionary
         if (lang.equals("en")){
@@ -55,7 +59,6 @@ public class Language {
         available.put("same_as_the_system", dict.get(-1));
         available.put("en", dict.get(-2));
         available.put("es", dict.get(-3));
-        
     }
 
     /**
