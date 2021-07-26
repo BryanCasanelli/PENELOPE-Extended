@@ -71,4 +71,11 @@ public class Language {
     public static String get(int i){
         return dict.get(i);
     }
+
+    /**
+     * Changes the app language.
+     */
+    public static void changeLanguage(String newLanguage) {
+        preferences.put("penelope_extended_language", newLanguage);
+    }
 }
