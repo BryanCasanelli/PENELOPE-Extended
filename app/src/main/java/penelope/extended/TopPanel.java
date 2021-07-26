@@ -5,12 +5,12 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 
 /**
- * Menu bar related things
+ * Menu bar related things.
  */
 public class TopPanel {
 
     /**
-     * Constructs the menu bar
+     * Constructs the menu bar.
      */
     public MenuBar generate(){
         // Language
