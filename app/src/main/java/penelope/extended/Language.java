@@ -15,7 +15,7 @@ public class Language {
     public static Map<String, String> available = new HashMap<String, String>();
 
     // Same as the system by default
-    private static String lang = "same_as_the_system";
+    public static String lang = "same_as_the_system";
 
     // Dictionary
     private static Map<Integer, String> dict = new HashMap<Integer, String>();
@@ -43,17 +43,20 @@ public class Language {
             }
         }
         // Fill dictionary
+        dict.put(0, "PENELOPE Extended")
         if (lang.equals("en")){
             dict.put(-1, "Same as the system");
             dict.put(-2, "English");
             dict.put(-3, "Spanish");
-            dict.put(0, "Language");
+            dict.put(1, "Language");
+            dict.put(2, "You need to restart the application");
         }
         else if (lang.equals("es")){
             dict.put(-1, "Igual que el sistema");
             dict.put(-2, "Inglés");
             dict.put(-3, "Español");
-            dict.put(0, "Idioma");
+            dict.put(1, "Idioma");
+            dict.put(2, "Necesita reiniciar la aplicación");
         }
         // Fill available languages map
         available.put("same_as_the_system", dict.get(-1));
