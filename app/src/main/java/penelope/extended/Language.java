@@ -50,6 +50,7 @@ public class Language {
             dict.put(-3, "Spanish");
             dict.put(1, "Language");
             dict.put(2, "You need to restart the application");
+            dict.put(3, "Ok");
         }
         else if (lang.equals("es")){
             dict.put(-1, "Igual que el sistema");
@@ -57,6 +58,7 @@ public class Language {
             dict.put(-3, "Español");
             dict.put(1, "Idioma");
             dict.put(2, "Necesita reiniciar la aplicación");
+            dict.put(3, "Aceptar");
         }
         // Fill available languages map
         available.put("same_as_the_system", dict.get(-1));
