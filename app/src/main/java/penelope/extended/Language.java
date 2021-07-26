@@ -43,7 +43,7 @@ public class Language {
             }
         }
         // Fill dictionary
-        dict.put(0, "PENELOPE Extended")
+        dict.put(0, "PENELOPE Extended");
         if (lang.equals("en")){
             dict.put(-1, "Same as the system");
             dict.put(-2, "English");
